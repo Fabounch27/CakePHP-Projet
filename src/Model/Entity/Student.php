@@ -13,9 +13,8 @@ use Cake\ORM\Entity;
  * @property string $last_name
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property int $group_id
  *
- * @property \App\Model\Entity\Group $group
+ * @property \App\Model\Entity\Absence[] $absences
  */
 class Student extends Entity
 {
@@ -33,7 +32,6 @@ class Student extends Entity
         'last_name' => true,
         'created' => true,
         'modified' => true,
-        'group_id' => true,
-        'group' => true,
+        'absences' => true,
     ];
 }

@@ -22,7 +22,6 @@ class StudentsFixture extends TestFixture
         'last_name' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => false, 'default' => null, 'comment' => ''],
         'modified' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => false, 'default' => null, 'comment' => ''],
-        'group_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
@@ -44,9 +43,8 @@ class StudentsFixture extends TestFixture
                 'id' => 1,
                 'first_name' => 'Lorem ipsum dolor sit amet',
                 'last_name' => 'Lorem ipsum dolor sit amet',
-                'created' => '2020-11-20 16:00:39',
-                'modified' => '2020-11-20 16:00:39',
-                'group_id' => 1,
+                'created' => '2020-11-20 16:53:49',
+                'modified' => '2020-11-20 16:53:49',
             ],
         ];
         parent::init();

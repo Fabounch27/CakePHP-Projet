@@ -19,7 +19,6 @@
                 <?php
                     echo $this->Form->control('first_name');
                     echo $this->Form->control('last_name');
-                    echo $this->Form->control('group_id', ['options' => $groups]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
