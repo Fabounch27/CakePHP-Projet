@@ -27,6 +27,10 @@
                     <td><?= h($student->last_name) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Group') ?></th>
+                    <td><?= $student->has('group') ? $this->Html->link($student->group->name, ['controller' => 'Groups', 'action' => 'view', $student->group->id]) : '' ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($student->id) ?></td>
                 </tr>

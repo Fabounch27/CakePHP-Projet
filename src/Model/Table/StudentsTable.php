@@ -11,6 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Students Model
  *
+ * @property \App\Model\Table\GroupsTable&\Cake\ORM\Association\BelongsTo $Groups
  * @property \App\Model\Table\AbsencesTable&\Cake\ORM\Association\HasMany $Absences
  *
  * @method \App\Model\Entity\Student newEmptyEntity()
@@ -47,6 +48,10 @@ class StudentsTable extends Table
 
         $this->addBehavior('Timestamp');
 
+        $this->belongsTo('Groups', [
+            'foreignKey' => 'group_id',
+            'joinType' => 'INNER',
+        ]);
         $this->hasMany('Absences', [
             'foreignKey' => 'student_id',
         ]);
@@ -77,5 +82,19 @@ class StudentsTable extends Table
             ->notEmptyString('last_name');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->existsIn(['group_id'], 'Groups'), ['errorField' => 'group_id']);
+
+        return $rules;
     }
 }

@@ -11,9 +11,11 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $first_name
  * @property string $last_name
+ * @property int $group_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
+ * @property \App\Model\Entity\Group $group
  * @property \App\Model\Entity\Absence[] $absences
  */
 class Student extends Entity
@@ -30,8 +32,10 @@ class Student extends Entity
     protected $_accessible = [
         'first_name' => true,
         'last_name' => true,
+        'group_id' => true,
         'created' => true,
         'modified' => true,
+        'group' => true,
         'absences' => true,
     ];
 }

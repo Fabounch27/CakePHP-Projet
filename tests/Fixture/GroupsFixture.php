@@ -41,8 +41,8 @@ class GroupsFixture extends TestFixture
             [
                 'id' => 1,
                 'name' => 'Lorem ipsum dolor sit amet',
-                'created' => '2020-11-20 16:00:44',
-                'modified' => '2020-11-20 16:00:44',
+                'created' => '2020-11-27 10:52:24',
+                'modified' => '2020-11-27 10:52:24',
             ],
         ];
         parent::init();

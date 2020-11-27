@@ -14,6 +14,7 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('first_name') ?></th>
                     <th><?= $this->Paginator->sort('last_name') ?></th>
+                    <th><?= $this->Paginator->sort('group_id') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th><?= $this->Paginator->sort('modified') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -25,6 +26,7 @@
                     <td><?= $this->Number->format($student->id) ?></td>
                     <td><?= h($student->first_name) ?></td>
                     <td><?= h($student->last_name) ?></td>
+                    <td><?= $student->has('group') ? $this->Html->link($student->group->name, ['controller' => 'Groups', 'action' => 'view', $student->group->id]) : '' ?></td>
                     <td><?= h($student->created) ?></td>
                     <td><?= h($student->modified) ?></td>
                     <td class="actions">

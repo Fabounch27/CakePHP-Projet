@@ -44,9 +44,9 @@
                             <th><?= __('Id') ?></th>
                             <th><?= __('First Name') ?></th>
                             <th><?= __('Last Name') ?></th>
+                            <th><?= __('Group Id') ?></th>
                             <th><?= __('Created') ?></th>
                             <th><?= __('Modified') ?></th>
-                            <th><?= __('Group Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($group->students as $students) : ?>
@@ -54,9 +54,9 @@
                             <td><?= h($students->id) ?></td>
                             <td><?= h($students->first_name) ?></td>
                             <td><?= h($students->last_name) ?></td>
+                            <td><?= h($students->group_id) ?></td>
                             <td><?= h($students->created) ?></td>
                             <td><?= h($students->modified) ?></td>
-                            <td><?= h($students->group_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Students', 'action' => 'view', $students->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Students', 'action' => 'edit', $students->id]) ?>

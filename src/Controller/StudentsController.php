@@ -18,6 +18,9 @@ class StudentsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Groups'],
+        ];
         $students = $this->paginate($this->Students);
 
         $this->set(compact('students'));
@@ -33,7 +36,7 @@ class StudentsController extends AppController
     public function view($id = null)
     {
         $student = $this->Students->get($id, [
-            'contain' => ['Absences'],
+            'contain' => ['Groups', 'Absences'],
         ]);
 
         $this->set(compact('student'));
@@ -56,7 +59,8 @@ class StudentsController extends AppController
             }
             $this->Flash->error(__('The student could not be saved. Please, try again.'));
         }
-        $this->set(compact('student'));
+        $groups = $this->Students->Groups->find('list', ['limit' => 200]);
+        $this->set(compact('student', 'groups'));
     }
 
     /**
@@ -80,7 +84,8 @@ class StudentsController extends AppController
             }
             $this->Flash->error(__('The student could not be saved. Please, try again.'));
         }
-        $this->set(compact('student'));
+        $groups = $this->Students->Groups->find('list', ['limit' => 200]);
+        $this->set(compact('student', 'groups'));
     }
 
     /**
